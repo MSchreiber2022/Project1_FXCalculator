@@ -1,0 +1,75 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    int userIn;
+    double amountUSD;
+    double amountOut;
+    const double mex = 18.8018;
+    const double gb = 0.76792;
+    const double ger = 0.89869;
+    const double can = 1.30602;
+    const double ind = 70.8729;
+    const double aus = 1.44838;
+
+    cout << "Welcome to SMU's FX Calculator!!" << endl;
+
+    while(userIn != 0){
+        cout << "Choose a country you would like to send to:" << endl;
+        cout << "1. Germany (EUR) " << endl;
+        cout << "2. Great Britain (GBP) " << endl;
+        cout << "3. Canada (CAD) " << endl;
+        cout << "4. India (INR) " << endl;
+        cout << "5. Mexico (MXN) " << endl;
+        cout << "6. Australia (AUD) " << endl;
+        cout << "0. Quit " << endl;
+        cout << "Select an option (1-6): " << endl;
+        cin >> userIn;
+
+    if(userIn !=0) {
+        cout << "Please Enter an amount (in USD) : $";
+        cin >> amountUSD;
+
+        if ((amountUSD < 500) && (amountUSD > 0)) {
+            amountUSD = amountUSD + 4.99;
+        } else if ((amountUSD < 1000) && (amountUSD >= 500)) {
+            amountUSD = amountUSD + 8.99;
+        } else if (amountUSD > 1000) {
+            amountUSD = amountUSD + 14.99;
+        }
+        cout << "Here is your quote!" << endl;
+
+        if (userIn == 1) {
+            amountOut = amountUSD * ger;
+            cout << "Amount due at checkout: $" << amountUSD << endl;
+            cout << "Amount received: " << amountOut << " EUR" << endl;
+        } else if (userIn == 2) {
+            amountOut = amountUSD * gb;
+            cout << "Amount due at checkout: $" << amountUSD << endl;
+            cout << "Amount received: " << amountOut << " GBP" << endl;
+        } else if (userIn == 3) {
+            amountOut = amountUSD * can;
+            cout << "Amount due at checkout: $" << amountUSD << endl;
+            cout << "Amount received: " << amountOut << " CAD" << endl;
+        } else if (userIn == 4) {
+            amountOut = amountUSD * ind;
+            cout << "Amount due at checkout: $" << amountUSD << endl;
+            cout << "Amount received: " << amountOut << " INR" << endl;
+        } else if (userIn == 5) {
+            amountOut = amountUSD * mex;
+            cout << "Amount due at checkout: $" << amountUSD << endl;
+            cout << "Amount received: " << amountOut << " MXN" << endl;
+        } else if (userIn == 6) {
+            amountOut = amountUSD * aus;
+            cout << "Amount due at checkout: $" << amountUSD << endl;
+            cout << "Amount received: " << amountOut << " AUS" << endl;
+        }
+
+    }
+
+    }
+
+    return 0;
+}
